@@ -14,6 +14,14 @@ import {
   ThemedLayout,
 } from "@refinedev/mui";
 
+import {
+  AccountCircleOutlined, 
+  ChatBubbleOutline, 
+  PeopleAltOutlined,
+  StarOutlineRounded, 
+  VillaOutlined 
+} from '@mui/icons-material'
+
 import { CssBaseline, GlobalStyles } from "@mui/material";
 import routerBindings, {
   CatchAllNavigate,
@@ -143,7 +151,53 @@ function App() {
               authProvider={authProvider}
               resources={[
                 {
-                  name: "blog_posts",
+                  name: "property",
+                  icon: <VillaOutlined></VillaOutlined>,
+                  list: "/blog-posts",
+                  create: "/blog-posts/create",
+                  edit: "/blog-posts/edit/:id",
+                  show: "/blog-posts/show/:id",
+                  meta: {
+                    canDelete: true,
+                  },
+                },
+                {
+                  name: "agent",
+                  icon: <PeopleAltOutlined></PeopleAltOutlined>,
+                  list: "/blog-posts",
+                  create: "/blog-posts/create",
+                  edit: "/blog-posts/edit/:id",
+                  show: "/blog-posts/show/:id",
+                  meta: {
+                    canDelete: true,
+                  },
+                },
+                {
+                  name: "review",
+                  icon: <StarOutlineRounded></StarOutlineRounded>,
+                  list: "/blog-posts",
+                  create: "/blog-posts/create",
+                  edit: "/blog-posts/edit/:id",
+                  show: "/blog-posts/show/:id",
+                  meta: {
+                    canDelete: true,
+                  },
+                },
+                {
+                  name: "message",
+                  icon: <ChatBubbleOutline></ChatBubbleOutline>,
+                  list: "/blog-posts",
+                  create: "/blog-posts/create",
+                  edit: "/blog-posts/edit/:id",
+                  show: "/blog-posts/show/:id",
+                  meta: {
+                    canDelete: true,
+                  },
+                },
+                {
+                  name: "my-profile",
+                  icon: <AccountCircleOutlined></AccountCircleOutlined>,
+                  options: { label: 'My Profile'},
                   list: "/blog-posts",
                   create: "/blog-posts/create",
                   edit: "/blog-posts/edit/:id",

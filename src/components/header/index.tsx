@@ -31,7 +31,7 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
   const hasSidebarToggle = Boolean(onToggleSiderClick);
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" elevation={0} sx={{background: '#fcfcfc'}}>
       <Toolbar>
         <Stack
           direction="row"

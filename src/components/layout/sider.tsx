@@ -208,7 +208,7 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
                     "transparent",
                   },
                   backgroundColor: 
-                  isSelected ? '475be8' : 
+                  isSelected ? '#475be8' : 
                   "transparent",
                 },
                 justifyContent: "center",
@@ -222,7 +222,7 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
                 sx={{
                   justifyContent: "center",
                   minWidth: 36,
-                  color: "secondary.contrastText",
+                  color: isSelected ? '#fff' : '#808191'
                 }}
               >
                 {icon ?? <ListOutlined />}
@@ -231,8 +231,10 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
                 primary={label}
                 primaryTypographyProps={{
                   noWrap: true,
-                  fontSize: "14px",
+                  fontSize: "16px",
                   fontWeight: isSelected ? "bold" : "normal",
+                  color: isSelected ? '#fff' : '#808191',
+                  marginLeft: '10px'
                 }}
               />
             </ListItemButton>
@@ -282,7 +284,7 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
             primary={translate("dashboard.title", "Dashboard")}
             primaryTypographyProps={{
               noWrap: true,
-              fontSize: "14px",
+              fontSize: "16px",
               fontWeight: selectedKey === "/" ? "bold" : "normal",
             }}
           />
@@ -319,13 +321,19 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
       <ListItemButton
         key="logout"
         onClick={handleLogout}
-        sx={{ justifyContent: "center" }}
+        sx={{ 
+          justifyContent: "center",
+          margin: '10px auto', 
+          borderRadius: '12px', 
+          minHeight: '56px', 
+          width: '90%'
+        }}
       >
         <ListItemIcon
           sx={{
             justifyContent: "center",
             minWidth: 36,
-            color: "secondary.contrastText",
+            color: "#898191",
           }}
         >
           <Logout />
@@ -334,7 +342,7 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
           primary={t("buttons.logout", "Logout")}
           primaryTypographyProps={{
             noWrap: true,
-            fontSize: "14px",
+            fontSize: "16px",
           }}
         />
       </ListItemButton>
@@ -362,7 +370,7 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
   };
 
   const drawer = (
-    <List disablePadding sx={{ mt: 1, color: "secondary.contrastText" }}>
+    <List disablePadding sx={{ mt: 1, color: "808191" }}>
       {renderSider()}
     </List>
   );
@@ -399,7 +407,7 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
             display: { sm: "block", md: "none" },
             "& .MuiDrawer-paper": {
               width: 256,
-              bgcolor: "secondary.main",
+              bgcolor: "#FCFCFC",
             },
           }}
         >
@@ -417,12 +425,12 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
         </Drawer>
         <Drawer
           variant="permanent"
-          PaperProps={{ elevation: 1 }}
+          PaperProps={{ elevation: 0 }}
           sx={{
             display: { xs: "none", md: "block" },
             "& .MuiDrawer-paper": {
               width: drawerWidth,
-              bgcolor: "secondary.main",
+              bgcolor: "#FCFCFC",
               overflow: "hidden",
               transition: "width 200ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
             },
@@ -450,11 +458,14 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
           </Box>
           <Button
             sx={{
-              background: "rgba(0,0,0,.5)",
+              background: "#475BE8",
               color: "secondary.contrastText",
               textAlign: "center",
               borderRadius: 0,
               borderTop: "1px solid #ffffff1a",
+              '&:hover': {
+                background: '#1e36e8'
+              }
             }}
             fullWidth
             size="large"
@@ -470,7 +481,7 @@ export const Sider: React.FC<RefineLayoutSiderProps> = ({
             top: "64px",
             left: "0px",
             borderRadius: "0 6px 6px 0",
-            bgcolor: "secondary.main",
+            bgcolor: "#475be8",
             zIndex: 1199,
             width: "36px",
           }}
