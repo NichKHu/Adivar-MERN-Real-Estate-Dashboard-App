@@ -26,7 +26,7 @@ export const Login: React.FC = () => {
       try {
         window.google.accounts.id.initialize({
           ux_mode: "popup",
-          client_id: GOOGLE_CLIENT_ID,
+          client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
           callback: async (res: CredentialResponse) => {
             if (res.credential) {
               login(res);
@@ -72,13 +72,11 @@ export const Login: React.FC = () => {
         <GoogleButton />
 
         <Typography align="center" color={"text.secondary"} fontSize="12px">
-          Powered by
-          <img
+          Powered by Google
+          {/* <img
             style={{ padding: "0 5px" }}
             alt="Google"
-            src="https://refine.ams3.cdn.digitaloceanspaces.com/superplate-auth-icons%2Fgoogle.svg"
-          />
-          Google
+          /> */}
         </Typography>
       </Box>
     </Container>
