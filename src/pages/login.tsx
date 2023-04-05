@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { ThemedTitle } from "@refinedev/mui";
 
+import { yariga } from '../assets';
+
 import { CredentialResponse } from "../interfaces/google";
 
 // Todo: Update your Google Client ID here
